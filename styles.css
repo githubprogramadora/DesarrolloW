@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.exercise-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.exercise-section h2 {
+    margin-top: 0;
+}
+
+.exercise-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.exercise-section button {
+    display: block;
+    margin-top: 10px;
+}
+
+.exercise-section p#bmiResult {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#arrayList {
+    margin-top: 10px;
+    list-style-type: lower-alpha;
+}
+
+/* Estilos para la lista de viñetas */
+.bullet-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .bullet-list li {
+    margin-bottom: 10px;
+  }
+  
+  .bullet-list a {
+    display: block;
+    padding: 10px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    
+    text-align: center; /* Centrar el texto */
+    transition: background-color 0.8s, color 0.8s;
+  }
+  
+  .bullet-list a:before {
+    content: "\2022"; /* Código Unicode para una viñeta (puedes cambiarlo por otros símbolos) */
+    color: #333; /* Color de la viñeta */
+    margin-right: 10px; /* Espacio entre la viñeta y el texto */
+  }
+  
+  .bullet-list a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* Estilos para centrar el párrafo */
+.centered-paragraph {
+    text-align: center;
+    color: #e90808;
+    font-size: 18px;
+    margin: 0 auto;
+    width: 80%; /* Puedes ajustar este valor según tus preferencias */
+    margin-bottom: 2em;
+  }
+
+  .footer {
+    background-color: #f0f0f0; /* Fondo gris */
+    text-align: center;
+    padding: 1em 0; /* Espacio interno */
+  }
+  
+  .footer p {
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    font-size: 14px;
+    color: #888;
+  }
+  
+  
+  
+  

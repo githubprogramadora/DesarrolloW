@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Práctica de JavaScript y DOM</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Mi Página de Práctica</h1>
+    <p class="centered-paragraph">
+      Bienvenidos a mi página de práctica de JavaScript y DOM.<br />
+        Por favor selecciona un ejercicio del menú de abajo.
+    </p>
+
+    <!-- Menú de ejercicios -->
+    <ul id="exerciseMenu" class="bullet-list">
+      <li>
+        <a href="#" onclick="showSection('imc'); return false;"
+          >IMC (Índice de Masa Corporal)</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('likes'); return false;"
+          >Número de Likes</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('password'); return false;"
+          >Contraseña Válida</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('taxCalculation'); return false;"
+          >Calculo de Impuestos</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('printArray'); return false;"
+          >Imprimir un arreglo</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('charCount'); return false;"
+          >Numero de caracteres</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('sumArray'); return false;"
+          >Sumar Arreglo</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('multiplyArray'); return false;"
+          >Multiplicar Arreglo</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('sumRangeArray'); return false;"
+          >sumRangeArray</a
+        >
+      </li>
+      <li>
+        <a href="#" onclick="showSection('findMaxNumber'); return false;"
+          >Encontrar el Número Máximo de un Arreglo</a
+        >
+      </li>
+
+      <!-- Agrega más ejercicios aquí en el futuro -->
+    </ul>
+
+    <!-- Secciones de ejercicios -->
+    <div id="sections">
+      <!-- Sección del IMC -->
+      <div id="imc" class="exercise-section">
+        <h2>Ejercicio 1: Índice de Masa Corporal (IMC)</h2>
+        <p>Calcula tu IMC y descubre en qué categoría te encuentras.</p>
+        <label>Peso (kg): <input type="number" id="weightInput" /></label>
+        <label>Altura (m): <input type="number" id="heightInput" /></label>
+        <button onclick="calculateBMI()">Calcular</button>
+        <p id="bmiResult"></p>
+      </div>
+
+      <!-- Sección del Número de Likes -->
+      <div id="likes" class="exercise-section">
+        <h2>Ejercicio 2: Número de Likes</h2>
+        <p>
+          Convierte un número en el formato de K para miles y M para millones.
+        </p>
+        <label
+          >Ingresa un número: <input type="number" id="likesInput"
+        /></label>
+        <button onclick="convertLikes()">Convertir</button>
+        <p id="likesResult"></p>
+      </div>
+
+      <!-- Sección de Contraseña Válida -->
+      <div id="password" class="exercise-section">
+        <h2>Ejercicio 3: Contraseña Válida</h2>
+        <p>
+          Ingresa tu nombre de usuario y contraseña para verificar si es válida.
+        </p>
+        <label>Usuario: <input type="text" id="usernameInput" /></label>
+        <label>Contraseña: <input type="password" id="passwordInput" /></label>
+        <button onclick="validatePassword()">Validar</button>
+        <p id="passwordResult"></p>
+      </div>
+
+      <!-- Sección de Cálculo de Impuestos -->
+      <div id="taxCalculation" class="exercise-section">
+        <h2>Ejercicio 4: Cálculo de Impuestos</h2>
+        <p>Ingresa tu edad e ingresos para calcular los impuestos.</p>
+        <label>Edad: <input type="number" id="ageInput" /></label>
+        <label>Ingresos: <input type="number" id="incomeInput" /></label>
+        <button onclick="calculateTaxes()">Calcular Impuestos</button>
+        <p id="taxResult"></p>
+      </div>
+
+      <!-- Sección de Imprimir un Arreglo -->
+      <div id="printArray" class="exercise-section">
+        <h2>Ejercicio 5: Imprimir un Arreglo</h2>
+        <p>
+          Ingresa elementos separados por coma y presiona el botón para imprimir
+          la lista.
+        </p>
+        <label>Arreglo: <input type="text" id="arrayInput" /></label>
+        <button onclick="printArray()">Imprimir</button>
+        <ul id="arrayList"></ul>
+      </div>
+
+      <!-- Sección de Número de Caracteres -->
+      <div id="charCount" class="exercise-section">
+        <h2>Ejercicio 6: Número de Caracteres</h2>
+        <p>
+          Ingresa un texto y un carácter para contar su aparición en el texto.
+        </p>
+        <label>Texto: <input type="text" id="textInput" /></label>
+        <label
+          >Carácter: <input type="text" id="charInput" maxlength="1"
+        /></label>
+        <button onclick="countCharacters()">Contar</button>
+        <p id="charCountResult"></p>
+      </div>
+
+      <!-- Sección de Sumar Arreglo -->
+      <div id="sumArray" class="exercise-section">
+        <h2>Ejercicio 7: Sumar Arreglo</h2>
+        <p>
+          Ingresa elementos separados por coma y presiona el botón para calcular
+          la suma.
+        </p>
+        <label>Arreglo: <input type="text" id="arraySumInput" /></label>
+        <button onclick="sumArray()">Calcular Suma</button>
+        <p id="arraySumResult"></p>
+      </div>
+
+      <!-- Sección de Multiplicar Arreglo -->
+      <div id="multiplyArray" class="exercise-section">
+        <h2>Ejercicio 8: Multiplicar Arreglo</h2>
+        <p>
+          Ingresa elementos separados por coma y presiona el botón para calcular
+          la multiplicación.
+        </p>
+        <label>Arreglo: <input type="text" id="arrayMultiplyInput" /></label>
+        <button onclick="multiplyArray()">Calcular Multiplicación</button>
+        <p id="arrayMultiplyResult"></p>
+      </div>
+
+      <!-- Sección de Sumar Arreglo entre Rango -->
+      <div id="sumRangeArray" class="exercise-section">
+        <h2>Ejercicio 9: Sumar Arreglo entre Rango</h2>
+        <p>
+          Ingresa elementos separados por coma, posición inicial y posición
+          final. Luego presiona el botón para calcular la suma en el rango.
+        </p>
+        <label>Arreglo: <input type="text" id="arrayRangeInput" /></label>
+        <label
+          >Posición Inicial: <input type="number" id="startPositionInput"
+        /></label>
+        <label
+          >Posición Final: <input type="number" id="endPositionInput"
+        /></label>
+        <button onclick="sumRangeArray()">Calcular Suma en Rango</button>
+        <p id="rangeSumResult"></p>
+      </div>
+
+      <!-- Sección de Encontrar el Número Máximo de un Arreglo -->
+      <div id="findMaxNumber" class="exercise-section">
+        <h2>Ejercicio 10: Encontrar el Número Máximo de un Arreglo</h2>
+        <p>
+          Ingresa elementos separados por coma y presiona el botón para
+          encontrar el número máximo.
+        </p>
+        <label>Arreglo: <input type="text" id="maxArrayInput" /></label>
+        <button onclick="findMaxNumber()">Encontrar Máximo</button>
+        <p id="maxNumberResult"></p>
+      </div>
+
+      <!-- Agrega más secciones de ejercicios aquí en el futuro -->
+    </div>
+  </body>
+<footer class="footer">
+  <p>© Cristian Eli Luna Arriaga | 0905-20-5578 | Seccion: A</p>
+</footer>
+</html>
