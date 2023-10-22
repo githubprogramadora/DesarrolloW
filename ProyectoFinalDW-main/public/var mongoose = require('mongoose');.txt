@@ -1,0 +1,51 @@
+var mongoose = require('mongoose');
+var express = require('express');
+var router = express.Router();
+var CarroSchema = require("./models/carroschema.js");
+//importar el validador de express-validator
+const { check, validationResult } = require("express-validator");
+
+//conecta a la base de datos
+
+var coneccion = "mongodb://127.0.0.1:27017/carrosdb";
+
+
+const db = coneccion;
+mongoose
+  .connect(coneccion, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+// si quiero llamar a generador de carros
+//var genera = require("./genera.js");
+//console.log(genera());
+
+
+
+
+//es un ejemplo, hacer las llamadas por cada verbo
+// http://localhost:3000/api/test
+router.post('/test', function (req, res) {
+    res.status(201).send('Insertado!');
+});
+
+router.put("/test", function (req, res) {
+  res.status(200).send("Actualizado!");
+});
+
+router.get("/test", function (req, res) {
+  res.status(200).send("Llega toda la data!!!!");
+});
+
+
+router.delete("/test", function (req, res) {
+  res.status(200).send("se borraron");
+});
+module.exports = router;
